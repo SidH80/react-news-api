@@ -9,8 +9,11 @@ class News extends Component {
         };
     }
 
+
+
     componentDidMount() {
-        const url = 'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=3b360f20444d4d618d6d62a90874da87';
+
+        const url = 'https://newsapi.org/v2/top-headlines?sources=&apiKey=3b360f20444d4d618d6d62a90874da87';
 
         fetch(url)
             .then((response) => {
@@ -31,7 +34,7 @@ class News extends Component {
 
     render() {
         return (
-            <div className="div row">
+            <div className="row">
                 {this.renderItems()}
             </div>
         );
