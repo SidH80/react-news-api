@@ -28,13 +28,17 @@ class SideNews extends Component {
                 this.setState({
                     error: true
                 })
-            });
-    }
-    renderItems() {
+            })
+        }
 
-        return this.state.sideNews.map((item) => (
-            <SingleSide key={item.url} item={item} />
-        ));
+    renderItems() {
+        if(!this.state.error) {
+            return this.state.sideNews.map((item) => (
+                <SingleSide key={item.url} item={item} />
+            ));
+        } else {
+            return <Error />
+        }
     }
 
     render() {
